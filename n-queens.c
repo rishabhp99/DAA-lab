@@ -5,10 +5,9 @@ int board[20],count;
  
 int main()
 {
- int n,i,j;
+ int n;
  void queen(int row,int n);
  
- printf("N Queens Problem Using Backtracking -");
  printf("\nEnter number of Queens:");
  scanf("%d",&n);
  queen(1,n);

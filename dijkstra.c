@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define INFINITY 9999
+#define INFINITY 999
 #define MAX 10
  
 void dijkstra(int G[MAX][MAX],int n,int startnode);
@@ -25,8 +25,8 @@ int main()
 void dijkstra(int G[MAX][MAX],int n,int startnode)
 {
  
-	int cost[MAX][MAX],distance[MAX],pred[MAX];
-	int visited[MAX],count,mindistance,nextnode,i,j;
+	int cost[MAX][MAX],dis[MAX],pred[MAX];
+	int vis[MAX],count,min_d,nextnode,i,j;
 	
 	//pred[] stores the predecessor of each node
 	//count gives the number of nodes seen so far
@@ -41,24 +41,24 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 	//initialize pred[],distance[] and visited[]
 	for(i=0;i<n;i++)
 	{
-		distance[i]=cost[startnode][i];
+		dis[i]=cost[startnode][i];
 		pred[i]=startnode;
-		visited[i]=0;
+		vis[i]=0;
 	}
 	
-	distance[startnode]=0;
-	visited[startnode]=1;
+	dis[startnode]=0;
+	vis[startnode]=1;
 	count=1;
 	
 	while(count<n-1)
 	{
-		mindistance=INFINITY;
+		min_d=INFINITY;
 		
 		//nextnode gives the node at minimum distance
 		for(i=0;i<n;i++)
-			if(distance[i]<mindistance&&!visited[i])
+			if(dis[i]<min_d && !visited[i])
 			{
-				mindistance=distance[i];
+				mindistance=dis[i];
 				nextnode=i;
 			}
 			

@@ -3,6 +3,7 @@
 int a,b,u,v,n,i,j,ne=1;
 int visited[10]= {0};
 int min,mincost=0,cost[10][10];
+
 void main() {
 	
 	printf("\n Enter the number of nodes:");
@@ -15,6 +16,7 @@ void main() {
 		    cost[i][j]=999;
 	}
 	visited[1]=1;
+
 	printf("\n");
 	while(ne<n) {
 		for (i=1,min=999;i<=n;i++)
@@ -33,5 +35,6 @@ void main() {
 		cost[a][b]=cost[b][a]=999;
 	}
 	printf("\n Minimun cost=%d",mincost);
+	printf("/n");
 	
 }

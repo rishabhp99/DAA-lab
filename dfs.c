@@ -1,15 +1,17 @@
+#include<stdio.h>
+
 void DFS(int);
 int G[10][10],visited[10],n;    //n is no of vertices and graph is sorted in array G[10][10]
  
 void main()
 {
     int i,j;
-    printf("Enter number of vertices:");
+    printf("Enter number of vertices:\n");
    
 	scanf("%d",&n);
  
     //read the adjecency matrix
-	printf("\nEnter adjecency matrix of the graph:");
+	printf("\nEnter adjecency matrix of the graph:\n");
    
 	for(i=0;i<n;i++)
        for(j=0;j<n;j++)
@@ -20,7 +22,19 @@ void main()
         visited[i]=0;
  
     DFS(0);
-}
+
+    int index;
+
+    for(i=0;i<n;i++){
+
+      if(!visited[i]){
+        index = i;
+        DFS(index);
+      }
+
+    }
+
+  }
  
 void DFS(int i)
 {
